@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balatro Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <header class="topbar">
+        <h1>Balatro Clone</h1>
+        <div class="stats">
+          <div><span>Ante</span><strong id="ante">1</strong></div>
+          <div><span>Round</span><strong id="round">Small Blind</strong></div>
+          <div><span>Hands</span><strong id="hands">4</strong></div>
+          <div><span>Discards</span><strong id="discards">3</strong></div>
+          <div><span>Score</span><strong id="score">0</strong></div>
+          <div><span>Target</span><strong id="target">300</strong></div>
+        </div>
+      </header>
+
+      <section class="play-area">
+        <div class="deck-panel panel">
+          <h2>Deck</h2>
+          <p id="deckCount">52 cards</p>
+          <button id="newRun">New Run</button>
+        </div>
+
+        <div class="hand-panel panel">
+          <h2>Best Hand</h2>
+          <p id="handType">Select cards</p>
+          <p><span id="chips">0</span> × <span id="mult">1</span> = <strong id="handScore">0</strong></p>
+          <button id="playHand">Play Hand</button>
+          <button id="discard">Discard</button>
+        </div>
+
+        <div class="jokers panel">
+          <h2>Jokers</h2>
+          <div id="jokerList"></div>
+          <button id="shopBtn">Open Shop</button>
+        </div>
+      </section>
+
+      <section class="cards" id="cards"></section>
+
+      <section class="log panel">
+        <h2>Run Log</h2>
+        <ul id="log"></ul>
+      </section>
+    </main>
+
+    <dialog id="shopDialog">
+      <h2>Shop</h2>
+      <p>Buy one Joker (cost: $4). Money: $<span id="money">0</span></p>
+      <div id="shopChoices" class="shop-choices"></div>
+      <div class="shop-controls">
+        <button id="skipShop">Skip</button>
+      </div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
