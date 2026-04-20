@@ -1,0 +1,163 @@
+:root {
+  --bg: #0d1b2a;
+  --panel: #1b263b;
+  --accent: #e0a458;
+  --text: #f2f4f8;
+  --muted: #9db1cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1b4332, var(--bg));
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.game {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(70px, 1fr));
+  gap: 0.5rem;
+}
+
+.stats div {
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.panel {
+  background: rgba(27, 38, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.play-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.cards {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  background: #f7f7f7;
+  color: #111;
+  border-radius: 10px;
+  min-height: 140px;
+  border: 3px solid transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 700;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.card.selected {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.card .suit.red {
+  color: #b00020;
+}
+
+button {
+  background: #415a77;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+#jokerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.joker {
+  background: #3a0ca3;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.log ul,
+#log {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-height: 180px;
+  overflow: auto;
+}
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  width: min(500px, 90vw);
+}
+
+.shop-choices {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.shop-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .play-area {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
